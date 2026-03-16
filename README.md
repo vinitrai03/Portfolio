@@ -76,7 +76,7 @@ Since this project fetches HTML components locally via JavaScript, running it di
 ## 📫 Connect With Me
 
 - **GitHub:** [@vinitrai03](https://github.com/vinitrai03)
-- **LinkedIn:** [Vinit Rai](https://www.linkedin.com/in/vinit-rai-6933b9291/)
+- **LinkedIn:** [Vinit Rai](https://www.linkedin.com/in/vinit-rai)
 - **Email:** vinitrai03@gmail.com
 
 ---
