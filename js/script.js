@@ -197,9 +197,6 @@ window.openModal = function(idx) {
                     ${data.tech.map(t => `<span class="bg-white/10 border border-white/20 text-gray-200 px-3 py-1.5 rounded-md text-sm">${t}</span>`).join('')}
                 </div>
                 <div class="flex gap-4">
-                    <a href="${data.demo}" class="flex-1 text-center bg-cloud-neon text-cloud-900 font-bold py-3 rounded-lg hover:shadow-[0_0_15px_#00f2fe] transition-shadow">
-                        <i class="fa-solid fa-external-link-alt mr-2"></i> Live Demo
-                    </a>
                     <a href="${data.github}" class="flex-1 text-center border border-white/30 text-white font-bold py-3 rounded-lg hover:bg-white/10 transition-colors">
                         <i class="fa-brands fa-github mr-2"></i> View Code
                     </a>
