@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinit Rai | Cloud Computing Portfolio</title>
+
+    <!-- SEO & Meta -->
+    <meta name="description"
+        content="Portfolio of Vinit Rai, a passionate B.Tech Cloud Computing student focused on AWS, Azure, GCP, and full-stack DevOps architecture.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Tailwind CSS with custom configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cloud: {
+                            900: '#0a1128', // Deep navy
+                            800: '#162b4c',
+                            neon: '#00f2fe', // Cyan accent
+                            glow: '#4facfe'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'type': 'type 3s ease-out .8s infinite alternate both',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'bounce-slow': 'bounce 3s infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="selection:bg-cloud-neon selection:text-cloud-900">
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot hidden md:block"></div>
+    <div class="cursor-outline hidden md:block"></div>
+
+    <!-- Container for dynamic component injection -->
+    <div id="app"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Script loader to simulate a component-based frontend (like React/Next, but vanilla JS)
+        // Similar architecture to aksh00001.github.io reference
+
+        async function loadComponents() {
+            const app = document.getElementById('app');
+            const components = [
+                'sections/navbar.html',
+                'sections/hero.html',
+                'sections/about.html',
+                'sections/skills.html',
+                'sections/projects.html',
+                'sections/achievements.html',
+                'sections/education.html',
+                'sections/certifications.html',
+                'sections/contact.html'
+            ];
+
+            // Wait for all HTML fetch promises to resolve
+            const htmlContents = await Promise.all(
+                components.map(async file => {
+                    const response = await fetch(file);
+                    return await response.text();
+                })
+            );
+
+            // Append all HTML into DOM synchronously to prevent layout leaps
+            app.innerHTML = htmlContents.join('');
+
+            // Now inject the main custom scripts after DOM is built
+            const script = document.createElement('script');
+            script.src = 'js/script.js';
+            document.body.appendChild(script);
+        }
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', loadComponents);
+    </script>
+</body>
+
+</html>

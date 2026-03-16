@@ -1,0 +1,47 @@
+<!-- 5. Projects -->
+<section id="projects" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4" data-aos="fade-up">
+            <div>
+                <span class="text-cloud-neon font-mono text-sm tracking-widest uppercase">Portfolio</span>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2">Featured <span class="text-cloud-neon">Deployments</span></h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            <!-- Project 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer h-full flex flex-col" data-aos="flip-up" data-aos-delay="100" onclick="openModal(0)">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800&auto=format&fit=crop" alt="Library Tracker" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-cloud-900/40 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div class="absolute top-4 right-4 bg-cloud-900/80 backdrop-blur border border-white/20 text-xs py-1 px-3 rounded-full font-mono">June 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-cloud-neon transition-colors">Library Tracker</h3>
+                    <p class="text-gray-400 text-sm mb-4 flex-grow">Built an interactive Library Tracker for managing academic events. Delivered a clean, easy-to-use calendar system for students and faculty.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-white/10 text-xs rounded text-gray-300"><i class="devicon-java-plain text-cloud-neon"></i> Java</span>
+                        <span class="px-2 py-1 bg-white/10 text-xs rounded text-gray-300"><i class="devicon-html5-plain text-cloud-neon"></i> HTML/CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer h-full flex flex-col" data-aos="flip-up" data-aos-delay="200" onclick="openModal(1)">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop" alt="AWS Attendance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-cloud-900/40 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div class="absolute top-4 right-4 bg-cloud-900/80 backdrop-blur border border-white/20 text-xs py-1 px-3 rounded-full font-mono">March 2025</div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold mb-2 group-hover:text-cloud-neon transition-colors">AWS Serverless Attendance</h3>
+                    <p class="text-gray-400 text-sm mb-4 flex-grow">Built a cost-efficient serverless attendance system to reduce the usage of database. Automated file processing and real-time monitoring.</p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-2 py-1 bg-white/10 text-xs rounded text-gray-300"><i class="devicon-amazonwebservices-plain-wordmark text-cloud-neon"></i> AWS Lambda</span>
+                        <span class="px-2 py-1 bg-white/10 text-xs rounded text-gray-300"><i class="devicon-python-plain text-cloud-neon"></i> Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

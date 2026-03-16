@@ -1,0 +1,68 @@
+<!-- 3. About Me -->
+<section id="about" class="py-24 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="w-full lg:w-5/12 relative" data-aos="fade-right">
+                <input type="file" id="photo-upload" accept="image/*" class="hidden" onchange="previewPhoto(event)">
+                <label for="photo-upload" class="cursor-pointer block relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full p-2 bg-gradient-to-tr from-cloud-neon to-purple-600 animate-[spin-slow_10s_linear_infinite] group/wrapper tooltip-container">
+                    <div class="w-full h-full rounded-full overflow-hidden bg-cloud-800 border-4 border-cloud-900 group">
+                        <img id="profile-photo" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop" alt="Vinit Rai" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3">
+                        <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fa-solid fa-camera text-white text-3xl mb-2"></i>
+                            <span class="text-white text-sm font-bold">Change Photo</span>
+                        </div>
+                    </div>
+                </label>
+                <!-- decorative badge -->
+                <div class="absolute bottom-4 right-4 md:right-10 bg-glass backdrop-blur-lg border border-white/20 p-4 rounded-xl shadow-xl glass-card animate-bounce-slow pointer-events-none">
+                    <p class="text-2xl font-black text-cloud-neon">3+</p>
+                    <p class="text-xs text-gray-300 font-mono">Cloud Certifications</p>
+                </div>
+                
+                <script>
+                    function previewPhoto(event) {
+                        const file = event.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                document.getElementById('profile-photo').src = e.target.result;
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                </script>
+            </div>
+            
+            <div class="w-full lg:w-7/12" data-aos="fade-left">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="w-12 h-1 bg-cloud-neon"></span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">About <span class="text-cloud-neon">Me</span></h2>
+                </div>
+                <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+                    Hello! I'm <strong class="text-white">Vinit Rai</strong>, a B.Tech student specializing in Computer Science and Engineering. I bridge the gap between development and operations by designing scalable infrastructure, writing efficient code, and automating workflows.
+                </p>
+                <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                    My expertise spans across major cloud providers (AWS, Azure, GCP) and container orchestration using Kubernetes. I believe in Infrastructure as Code (IaC) and the power of automation to solve complex business challenges securely.
+                </p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="glass flex flex-col p-4 rounded-xl border border-white/10 hover:border-cloud-neon transition-colors">
+                        <i class="fa-solid fa-server text-3xl text-cloud-neon mb-3"></i>
+                        <h4 class="font-bold text-white mb-1">Architecture</h4>
+                        <p class="text-sm text-gray-400">High Availability</p>
+                    </div>
+                    <div class="glass flex flex-col p-4 rounded-xl border border-white/10 hover:border-cloud-neon transition-colors">
+                        <i class="fa-solid fa-infinity text-3xl text-cloud-neon mb-3"></i>
+                        <h4 class="font-bold text-white mb-1">DevOps</h4>
+                        <p class="text-sm text-gray-400">CI/CD Pipelines</p>
+                    </div>
+                    <div class="glass flex flex-col p-4 rounded-xl border border-white/10 hover:border-cloud-neon transition-colors">
+                        <i class="fa-solid fa-shield-halved text-3xl text-cloud-neon mb-3"></i>
+                        <h4 class="font-bold text-white mb-1">Security</h4>
+                        <p class="text-sm text-gray-400">DevSecOps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

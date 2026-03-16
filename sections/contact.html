@@ -1,0 +1,73 @@
+<!-- 8. Contact -->
+<section id="contact" class="py-24 bg-cloud-800/30 relative z-10 border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-cloud-neon font-mono text-sm tracking-widest uppercase">Get In Touch</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2">Deploy A <span class="text-cloud-neon">Message</span></h2>
+        </div>
+
+        <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+            <!-- Decorative background elements inside form -->
+            <div class="absolute top-[-50px] right-[-50px] w-32 h-32 bg-cloud-neon/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-50px] left-[-50px] w-32 h-32 bg-blue-600/20 rounded-full blur-3xl"></div>
+
+            <form id="contact-form" class="relative z-10 flex flex-col gap-6" onsubmit="event.preventDefault(); submitForm();">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="name" class="text-sm font-semibold text-gray-300 ml-1">Name</label>
+                        <input type="text" id="name" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all" placeholder="John Doe">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="email" class="text-sm font-semibold text-gray-300 ml-1">Email</label>
+                        <input type="email" id="email" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all" placeholder="john@company.com">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label for="message" class="text-sm font-semibold text-gray-300 ml-1">Message</label>
+                    <textarea id="message" rows="5" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all resize-none" placeholder="Let's build something scalable..."></textarea>
+                </div>
+                <button type="submit" id="submit-btn" class="mt-2 bg-cloud-neon text-cloud-900 font-bold text-lg py-4 rounded-xl hover:bg-white hover:shadow-[0_0_20px_#00f2fe] transition-all flex items-center justify-center gap-2">
+                    <span>Send Transmission</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <div id="form-success" class="hidden text-green-400 text-center text-sm font-mono mt-2">Message deployed successfully! (Demo)</div>
+            </form>
+        </div>
+        
+        <!-- Socials -->
+        <div class="mt-16 flex justify-center gap-6" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://github.com/vinitrai03" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-xl text-gray-300 hover:text-cloud-neon hover:scale-110 hover:-translate-y-2 hover:border-cloud-neon transition-all" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="http://www.linkedin.com/in/vinit-rai" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-xl text-gray-300 hover:text-cloud-neon hover:scale-110 hover:-translate-y-2 hover:border-cloud-neon transition-all" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:raivinit297@gmail.com" class="w-12 h-12 rounded-full glass flex items-center justify-center text-xl text-gray-300 hover:text-cloud-neon hover:scale-110 hover:-translate-y-2 hover:border-cloud-neon transition-all" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+919630837449" class="w-12 h-12 rounded-full glass flex items-center justify-center text-xl text-gray-300 hover:text-cloud-neon hover:scale-110 hover:-translate-y-2 hover:border-cloud-neon transition-all" aria-label="Phone">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 9. Footer -->
+<footer class="py-8 border-t border-white/10 relative z-10 glass text-center">
+    <p class="text-gray-400 text-sm">
+        &copy; 2026 Vinit Rai. Engineered with <i class="fa-solid fa-cloud text-cloud-neon mx-1"></i> and clean code.
+    </p>
+</footer>
+
+<!-- Project Modal (Hidden by default) -->
+<div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-cloud-900/90 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="glass-card rounded-2xl w-full max-w-3xl relative z-10 max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300" id="modal-content-wrap">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white w-8 h-8 rounded-full bg-white/10 flex items-center justify-center z-20">
+            <i class="fa-solid fa-times"></i>
+        </button>
+        <div id="modal-content" class="p-0">
+            <!-- Injected via JS -->
+        </div>
+    </div>
+</div>

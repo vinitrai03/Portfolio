@@ -1,0 +1,54 @@
+<!-- 2. Hero Section -->
+<section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <!-- Canvas for Particles -->
+    <canvas id="particles-bg"></canvas>
+    
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
+        <div data-aos="zoom-out" data-aos-duration="1000" class="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md">
+            <span class="text-sm font-mono text-cloud-neon flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cloud-neon animate-pulse"></span>
+                Available for internship / full-time
+            </span>
+        </div>
+        
+        <h1 data-aos="fade-up" data-aos-duration="1200" class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-4">
+            Vinit <span class="bg-clip-text text-transparent bg-gradient-to-r from-cloud-neon to-cloud-glow">Rai</span>
+        </h1>
+        
+        <h2 data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-3xl font-light text-gray-300 mb-6 flex flex-col md:flex-row gap-2 items-center justify-center">
+            <span>B.Tech Cloud Computing Student</span>
+            <span class="hidden md:inline text-cloud-neon">|</span>
+            <span class="font-mono text-cloud-neon" id="typewriter"></span>
+        </h2>
+        
+        <p data-aos="fade-up" data-aos-delay="400" class="text-gray-400 max-w-2xl text-lg mb-10 leading-relaxed">
+            Architecting scalable, secure, and highly available distributed systems. Passionate about turning complex infrastructure into streamlined code.
+        </p>
+        
+        <div data-aos="fade-up" data-aos-delay="600" class="flex flex-col sm:flex-row gap-6 mt-4">
+            <div class="magnetic-wrap">
+                <a href="#projects" class="btn-magnetic flex items-center gap-3 bg-gradient-to-r from-cloud-neon to-cloud-glow text-cloud-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-[0_0_30px_rgba(0,242,254,0.6)] transition-all">
+                    <i class="fa-solid fa-rocket"></i> Explore Projects
+                </a>
+            </div>
+            <div class="magnetic-wrap relative">
+                <a href="resume.pdf" target="_blank" class="btn-magnetic flex items-center gap-3 bg-white/10 text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 hover:border-cloud-neon backdrop-blur-md transition-all">
+                    <i class="fa-solid fa-file-pdf"></i> View Resume
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce z-10">
+        <span class="text-xs text-gray-400 mb-2 font-mono tracking-widest uppercase">Scroll</span>
+        <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+            <div class="w-1.5 h-3 bg-cloud-neon rounded-full animate-[float_2s_infinite]"></div>
+        </div>
+    </div>
+    
+    <!-- Background floating icons -->
+    <i class="devicon-amazonwebservices-plain-wordmark text-6xl absolute top-32 left-[10%] opacity-10 animate-float" style="animation-delay: 0s;"></i>
+    <i class="devicon-azure-plain text-6xl absolute bottom-40 right-[15%] opacity-10 animate-float" style="animation-delay: 2s;"></i>
+    <i class="devicon-kubernetes-plain text-6xl absolute top-1/2 left-[80%] opacity-10 animate-float" style="animation-delay: 4s;"></i>
+</section>
