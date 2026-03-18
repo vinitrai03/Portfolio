@@ -77,7 +77,7 @@ Since this project fetches HTML components locally via JavaScript, running it di
 
 - **GitHub:** [@vinitrai03](https://github.com/vinitrai03)
 - **LinkedIn:** [Vinit Rai](https://www.linkedin.com/in/vinit-rai)
-- **Email:** vinitrai03@gmail.com
+- **Email:** raivinit297@gmail.com
 
 ---
 *Designed & built by Vinit Rai.*
