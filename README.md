@@ -3,7 +3,7 @@
 Welcome to my personal portfolio repository! This project is a modern, responsive, and highly interactive single-page application built to showcase my journey, skills, projects, and achievements as a **Cloud Engineer & Operations Specialist**.
 
 ## 🌐 Live Preview
-Feel free to check out the live version of this portfolio here: vinitrai03.netlify.app
+Feel free to check out the live version of this portfolio here: https://vinitrai03.netlify.app/
 
 
 
