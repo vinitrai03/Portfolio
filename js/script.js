@@ -248,28 +248,56 @@ magnetics.forEach(btn => {
 window.submitForm = function(event) {
     if (event) event.preventDefault();
     
+    const form = document.getElementById('contact-form');
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
-    
-    // Construct the mailto parameters
-    const subject = encodeURIComponent(`Portfolio Message from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    
-    // Open default mail client
-    window.location.href = `mailto:raivinit297@gmail.com?subject=${subject}&body=${body}`;
-    
     const btn = document.getElementById('submit-btn');
-    const oldHtml = btn.innerHTML;
-    btn.innerHTML = '<i class="fa-solid fa-check"></i> Redirecting to Email';
-    
     const successEl = document.getElementById('form-success');
-    successEl.classList.remove('hidden');
+    const errorEl = document.getElementById('form-error');
     
-    setTimeout(() => {
+    // IMPORTANT: Replace the 'YOUR_ENDPOINT_ID' with your actual Formspree endpoint string (like 'xjvqgwke')
+    const formspreeId = 'YOUR_ENDPOINT_ID'; 
+    
+    if (formspreeId === 'YOUR_ENDPOINT_ID') {
+        errorEl.classList.remove('hidden');
+        errorEl.innerText = "Please replace 'YOUR_ENDPOINT_ID' in script.js with your Formspree ID.";
+        return;
+    }
+
+    const oldHtml = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Deploying...';
+    btn.disabled = true;
+    errorEl.classList.add('hidden');
+    
+    fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, message })
+    }).then(response => {
+        if (response.ok) {
+            btn.innerHTML = oldHtml;
+            btn.disabled = false;
+            successEl.classList.remove('hidden');
+            form.reset();
+            setTimeout(() => successEl.classList.add('hidden'), 5000);
+        } else {
+            response.json().then(data => {
+                btn.innerHTML = oldHtml;
+                btn.disabled = false;
+                errorEl.classList.remove('hidden');
+                errorEl.innerText = Object.hasOwn(data, 'errors') ? data.errors.map(e => e.message).join(", ") : "Oops! There was a problem submitting your form";
+            });
+        }
+    }).catch(error => {
         btn.innerHTML = oldHtml;
-        successEl.classList.add('hidden');
-    }, 4000);
+        btn.disabled = false;
+        errorEl.classList.remove('hidden');
+        errorEl.innerText = "Oops! There was a problem submitting your form";
+    });
 }
 
 /* --- Minimal Vanilla JS Particles Background --- */
