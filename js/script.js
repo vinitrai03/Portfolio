@@ -257,7 +257,7 @@ window.submitForm = function(event) {
     const errorEl = document.getElementById('form-error');
     
     // IMPORTANT: Replace the 'YOUR_ENDPOINT_ID' with your actual Formspree endpoint string (like 'xjvqgwke')
-    const formspreeId = 'YOUR_ENDPOINT_ID'; 
+    const formspreeId = 'mjgadqla'; 
     
     if (formspreeId === 'YOUR_ENDPOINT_ID') {
         errorEl.classList.remove('hidden');
