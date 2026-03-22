@@ -245,58 +245,7 @@ magnetics.forEach(btn => {
 });
 
 /* --- Contact Form --- */
-window.submitForm = function() {
-    const form = document.getElementById('contact-form');
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    const btn = document.getElementById('submit-btn');
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Deploying...';
-    btn.classList.add('opacity-80', 'cursor-not-allowed');
-    btn.disabled = true;
-    
-    fetch('https://formsubmit.co/ajax/raivinit297@gmail.com', {
-        method: "POST",
-        headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            message: message,
-            _subject: "New Contact Message from Portfolio"
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        btn.innerHTML = '<span>Send Transmission</span><i class="fa-solid fa-paper-plane"></i>';
-        btn.classList.remove('opacity-80', 'cursor-not-allowed');
-        btn.disabled = false;
-        
-        const successEl = document.getElementById('form-success');
-        successEl.innerHTML = "Message deployed successfully!";
-        successEl.classList.remove('hidden', 'text-red-400');
-        successEl.classList.add('text-green-400');
-        
-        form.reset();
-        setTimeout(() => {
-            successEl.classList.add('hidden');
-        }, 4000);
-    })
-    .catch(error => {
-        console.error(error);
-        btn.innerHTML = '<span>Send Transmission</span><i class="fa-solid fa-paper-plane"></i>';
-        btn.classList.remove('opacity-80', 'cursor-not-allowed');
-        btn.disabled = false;
-        
-        const successEl = document.getElementById('form-success');
-        successEl.innerHTML = "Error sending message. Please try again.";
-        successEl.classList.remove('hidden', 'text-green-400');
-        successEl.classList.add('text-red-400');
-    });
-}
+// Standard HTML form submission is used now via FormSubmit.co
 
 /* --- Minimal Vanilla JS Particles Background --- */
 const canvas = document.getElementById('particles-bg');
