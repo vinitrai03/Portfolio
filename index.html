@@ -109,9 +109,10 @@
             ];
 
             // Wait for all HTML fetch promises to resolve
+            const cacheBuster = new Date().getTime();
             const htmlContents = await Promise.all(
                 components.map(async file => {
-                    const response = await fetch(file);
+                    const response = await fetch(`${file}?v=${cacheBuster}`);
                     return await response.text();
                 })
             );
@@ -121,7 +122,7 @@
 
             // Now inject the main custom scripts after DOM is built
             const script = document.createElement('script');
-            script.src = 'js/script.js';
+            script.src = `js/script.js?v=${cacheBuster}`;
             document.body.appendChild(script);
         }
 
