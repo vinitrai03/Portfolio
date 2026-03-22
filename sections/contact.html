@@ -11,28 +11,26 @@
             <div class="absolute top-[-50px] right-[-50px] w-32 h-32 bg-cloud-neon/20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-[-50px] left-[-50px] w-32 h-32 bg-blue-600/20 rounded-full blur-3xl"></div>
 
-            <form action="https://formsubmit.co/raivinit297@gmail.com" method="POST" id="contact-form" class="relative z-10 flex flex-col gap-6" onsubmit="document.getElementById('submit-btn').innerHTML = '<i class=\'fa-solid fa-spinner fa-spin\'></i> Deploying...';">
-                <input type="hidden" name="_next" value="https://vinitrai03.vercel.app/">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="text" name="_honey" style="display:none">
+            <form id="contact-form" class="relative z-10 flex flex-col gap-6" onsubmit="submitForm(event);">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="flex flex-col gap-2">
                         <label for="name" class="text-sm font-semibold text-gray-300 ml-1">Name</label>
-                        <input type="text" name="name" id="name" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all" placeholder="John Doe">
+                        <input type="text" id="name" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all" placeholder="John Doe">
                     </div>
                     <div class="flex flex-col gap-2">
                         <label for="email" class="text-sm font-semibold text-gray-300 ml-1">Email</label>
-                        <input type="email" name="email" id="email" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all" placeholder="john@company.com">
+                        <input type="email" id="email" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all" placeholder="john@company.com">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="message" class="text-sm font-semibold text-gray-300 ml-1">Message</label>
-                    <textarea name="message" id="message" rows="5" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all resize-none" placeholder="Let's build something scalable..."></textarea>
+                    <textarea id="message" rows="5" required class="bg-cloud-900/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cloud-neon focus:ring-1 focus:ring-cloud-neon transition-all resize-none" placeholder="Let's build something scalable..."></textarea>
                 </div>
                 <button type="submit" id="submit-btn" class="mt-2 bg-cloud-neon text-cloud-900 font-bold text-lg py-4 rounded-xl hover:bg-white hover:shadow-[0_0_20px_#00f2fe] transition-all flex items-center justify-center gap-2">
-                    <span>Send Transmission</span>
+                    <span>Send Message via Email</span>
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
+                <div id="form-success" class="hidden text-green-400 text-center text-sm font-mono mt-2">Opening your email app...</div>
             </form>
         </div>
         

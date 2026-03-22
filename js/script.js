@@ -245,7 +245,32 @@ magnetics.forEach(btn => {
 });
 
 /* --- Contact Form --- */
-// Standard HTML form submission is used now via FormSubmit.co
+window.submitForm = function(event) {
+    if (event) event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Construct the mailto parameters
+    const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    
+    // Open default mail client
+    window.location.href = `mailto:raivinit297@gmail.com?subject=${subject}&body=${body}`;
+    
+    const btn = document.getElementById('submit-btn');
+    const oldHtml = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> Redirecting to Email';
+    
+    const successEl = document.getElementById('form-success');
+    successEl.classList.remove('hidden');
+    
+    setTimeout(() => {
+        btn.innerHTML = oldHtml;
+        successEl.classList.add('hidden');
+    }, 4000);
+}
 
 /* --- Minimal Vanilla JS Particles Background --- */
 const canvas = document.getElementById('particles-bg');
